@@ -9,7 +9,7 @@ Handler = Proc.new do |request, response|
     jti_raw = [hmac_secret, iat].join(':').to_s
     jti = Digest::MD5.hexdigest(jti_raw)
 
-    payload = { name: 'Szymon', email: 'szymontest@zendesk.com', jti: jti, iat: iat}
+    payload = { name: 'Szymon', email: 'szymontest@szymontest.com', jti: jti, iat: iat}
     
     token = JWT.encode payload, hmac_secret, 'HS256'
 
